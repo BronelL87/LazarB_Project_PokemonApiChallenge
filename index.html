@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+    <title>Pokemon API</title>
+</head>
+
+<body class="bg-[url('/assets/pokeBg.jpg')] bg-cover bg-fixed bg-center bg-no-repeat font-[Archivo]">
+
+    <!-- Search Bar -->
+    <div class="flex justify-center px-4">
+        <div
+            class="flex justify-center items-center gap-5 bg-[#0008A9CC] w-full sm:w-[600px] h-[100px] rounded-[20px] mt-[20px] px-4">
+            <img class="absolute mr-[480px] mb-[30px] sm:left-auto mt-8 cursor-pointer w-[39px] h-[38px]" id="searchBtn"
+                src="./assets/MagnifyingGlass.png" alt="search button">
+            <input class="w-full sm:w-[300px] h-[50px] bg-white rounded-[20px] px-[55px]" id="pokeSearch" type="text"
+                placeholder="| Name or Pokedex Number">
+            <!-- Modal toggle -->
+            <button data-modal-target="default-modal" data-modal-toggle="default-modal" id="favsBtn"
+                class="block text-white bg-[#FF9500] w-[206px] h-[50px] text-[32px] mt-[10px] cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                type="button">
+                Favorites
+            </button>
+
+            <!-- Main modal -->
+            <div id="default-modal" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full max-w-2xl max-h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                        <!-- Modal header -->
+                        <div
+                            class="flex items-center justify-center p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
+                            <h3 class="text-[32px] font-semibold text-gray-900 dark:text-white flex ml-[220px]">
+                                Favorites
+                            </h3>
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                data-modal-hide="default-modal">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4">
+                            <p id="displayFavs" class="text-base leading-relaxed text-gray-500 dark:text-gray-400">No
+                                Favorites Yet.
+                            </p>
+
+                        </div>
+                        <!-- Modal footer -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    </div>
+    </div>
+
+    <!-- Three Smaller Boxes (Abilities, Pokemon Info, Locations) -->
+    <div class="flex flex-wrap justify-center gap-5 px-4">
+
+        <div
+            class="flex justify-center w-full sm:w-[450px] h-[406px] bg-[#0008A9CC] rounded-[20px] mt-[30px] text-white">
+            <div>
+                <h1 class="text-[32px] sm:text-[40px] flex justify-center">Locations:</h1>
+                <p class="text-[24px] sm:text-[32px]" id="pokeLocation">locations</p>
+            </div>
+        </div>
+
+        <div
+            class="flex justify-center w-full sm:w-[600px] h-[406px] bg-[#0008A9CC] rounded-[20px] mt-[30px] text-white">
+            <div>
+                <div class="flex justify-center items-center gap-2">
+                    <img id="addFav" class="h-[40px] sm:h-[48px] w-[40px] sm:w-[48px] cursor-pointer"
+                        src="./assets/Star.png" alt="Favorite">
+                    <h1 id="pokeName" class="text-[32px] sm:text-[40px]">Name</h1>
+                    <h2 id="pokeId" class="text-[32px] sm:text-[40px]">id</h2>
+                    <img class="h-[40px] sm:h-[48px] w-[40px] sm:w-[48px] cursor-pointer" id="randomBtn"
+                        src="./assets/Shuffle.png" alt="Random Button">
+                </div>
+
+                <div class="flex justify-center">
+                    <img id="pokeImg" class="w-[150px] sm:w-[221px] h-[150px] sm:h-[228px]" src="#"
+                        alt="Pokemon Sprite">
+                    <img class="h-[40px] sm:h-[50px] w-[40px] sm:w-[50px] cursor-pointer" src="./assets/Sparkle.png"
+                        id="shinyBtn" alt="Shiny Button">
+                </div>
+                <h3 id="pokeType" class="text-[24px] sm:text-[32px] flex justify-center w-full">type</h3>
+            </div>
+        </div>
+
+        <div
+            class="flex justify-center w-full sm:w-[450px] h-[406px] bg-[#0008A9CC] rounded-[20px] mt-[30px] text-white">
+            <div>
+                <h1 class="text-[32px] sm:text-[40px] flex justify-center">Abilities:</h1>
+                <p class="text-[24px] sm:text-[32px] w-[90%] sm:w-[400px]" id="pokeAbility">abilities</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Moves and Evolutions (Big Box) -->
+    <div class="flex justify-center px-4">
+        <div
+            class="flex justify-center w-full sm:w-[90%] max-w-[1367px] h-auto sm:h-[450px] bg-[#0008A9CC] rounded-[20px] mt-[30px] text-white p-4">
+            <div class="w-full">
+                <h1 class="text-[32px] sm:text-[40px] flex justify-center">Moves:</h1>
+                <div class="overflow-y-scroll w-full h-[160px] bg-black opacity-100 rounded-[20px]">
+                    <p class="text-[24px] sm:text-[32px]" id="pokeMoves">moves</p>
+                </div>
+
+                <div class="mt-10">
+                    <h1 class="flex justify-center text-[32px] sm:text-[40px]">Evolutions:</h1>
+                    <p class="flex justify-center text-[24px] sm:text-[32px]" id="pokeEvol">evolutions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./scripts/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"></script>
+</body>
+
+</html>

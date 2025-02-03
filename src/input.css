@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('/assets/fonts/ArchivoBlack-Regular.ttf');
+}
