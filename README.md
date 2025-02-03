@@ -24,6 +24,7 @@ Have a Prototype in Figma (Desktop, Tablet, Mobile)
 ### Peer Review
 
 **Reviewer** 
+ Charles Orr
 
-
-**Reviewer Notes** 
+**Reviewer Notes**
+ i like your design, only part of the design i wasnt a huge fan of was the black box for the moves, i recommend lowering its oppacity a little aside from that the only issues i saw were no favorites, great work, keep it up :)
