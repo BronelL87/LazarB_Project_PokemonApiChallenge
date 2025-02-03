@@ -5,7 +5,7 @@ const savePokemon = (userPoke) => {
         userFavs.push(userPoke)
     }
 
-    localStorage.setItem('Pokemon', JSON.stringify*(userFavs));
+    localStorage.setItem('Pokemon', JSON.stringify(userFavs));
 }
 
 const getFavPokes = () => {

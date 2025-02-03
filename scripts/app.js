@@ -143,7 +143,8 @@ const showFavorite = async () =>{
     displayFavs.innerText = "";
     favoritePoke.map(userPoke => {
         let p = document.createElement('p');
-
+        
+        p.type = 'p';
         p.className = "mt-[10px]";
         p.innerText = userPoke;
 
@@ -162,9 +163,10 @@ const showFavorite = async () =>{
         displayFavs.appendChild(p);
     })
 }
-let userSearch = "bulbasaur";
-userSearch = pokeSearch.value;
+
+
 addFav.addEventListener('click', async () => {
+    let userSearch = pokeName.innerText;
     const userPoke = await getPokemon(userSearch);
     savePokemon(userPoke.name);
 
